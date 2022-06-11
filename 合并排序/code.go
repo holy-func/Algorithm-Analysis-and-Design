@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func mergeSort(arr *[]int) *[]int {
-	if len(*arr) == 1 {
+	if len(*arr) <= 1 {
 		return arr
 	} else {
 		mid := len(*arr) >> 1
