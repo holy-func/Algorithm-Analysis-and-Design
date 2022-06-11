@@ -6,12 +6,13 @@ func Queen(n int) *[][]int {
 	x, used, Xs := make([]int, n), make([]bool, n), [][]int{}
 	var backtrack func(int)
 	isXWorkable := func(cur int) bool {
-		for i := 0; i < cur; i++ {
-			for j := i + 1; j < cur; j++ {
-				if i+x[i] == j+x[j] || x[j]-x[i] == j-i {
-					return false
-				}
+		j := cur - 1
+		for i := 0; i < cur-1; i++ {
+			// for j := i + 1; j < cur; j++ {
+			if i+x[i] == j+x[j] || x[j]-x[i] == j-i {
+				return false
 			}
+			// }
 		}
 		return true
 	}
